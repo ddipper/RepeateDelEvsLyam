@@ -1,4 +1,136 @@
-﻿Account account = new Account(200);
+﻿
+
+
+
+
+
+
+
+
+
+
+Func<int, int, string> createString = (a, b) => $"{a}{b}";
+Console.WriteLine(createString(1,5));
+Console.WriteLine(createString(34,2));
+
+int result1 = DoOperation(5, DoubleNumber);
+Console.WriteLine(result1);
+
+int result2 = DoOperation(3, SquareNumber);
+Console.WriteLine(result2);
+
+int DoOperation(int n, Func<int, int> operation) => operation(n);
+int DoubleNumber(int n) => 2 * n;
+int SquareNumber(int n) => n * n;
+
+
+/*Predicate<int> isPositive = (int x) => x > 0; 
+
+Console.WriteLine(isPositive(30));
+Console.WriteLine(isPositive(-20));*/
+
+
+/*DoOperation(10, 6, Add);
+DoOperation(13, 2, Multiply);
+
+void DoOperation(int a, int b, Action<int, int> op) => op(a, b);
+
+void Add(int x, int y) => Console.WriteLine($"{x} + {y} = {x + y}");
+void Multiply(int x, int y) => Console.WriteLine($"{x} * {y} = {x * y}");*/
+
+
+/*EmailReceiver emailBox = ReceiveMessage;//контвариантность
+emailBox(new EmailMessage("Welcome"));
+
+void ReceiveMessage(Message message) => message.Print();
+delegate void EmailReceiver(EmailMessage message);
+
+//MessageBuilder messageBuilder = writeEmailMessage; //ковариантность
+//Message message = messageBuilder("Hello");
+//message.Print();
+
+//EmailMessage writeEmailMessage(string text) => new EmailMessage(text);
+
+//delegate Message MessageBuilder(string text);
+
+class Message
+{
+    public string Text { get; }
+    public Message(string text) => Text = text;
+    public virtual void Print() => Console.WriteLine($"Message: {Text}");
+
+}
+
+class EmailMessage : Message
+{
+    public EmailMessage(string text) : base(text) { }
+    public override void Print() => Console.WriteLine($"Email: {Text}");
+}
+
+class SmsMessage : Message
+{
+    public SmsMessage(string text) : base(text) { }
+    public override void Print() => Console.WriteLine($"Sms: {Text}");
+}*/
+
+
+
+/*Account account = new Account(100);                                   //Very very very nice :))  
+account.Notify += DisplayMessage;
+account.Put(20);
+account.Take(40);
+account.Take(400);
+
+void DisplayMessage(Account sender, AccountEventArgs e)
+{
+    Console.WriteLine($"Transaction sum: {e.Sum}");
+    Console.WriteLine(e.Message);
+    Console.WriteLine($"Now at balance: {sender.Sum}");
+}
+
+class AccountEventArgs
+{
+    public string Message { get; }
+    public int Sum { get; }
+
+    public AccountEventArgs(string message, int sum)
+    {
+        Message = message;
+        Sum = sum;
+    }
+}
+
+class Account
+{
+    public delegate void AccountHandler(Account sender, AccountEventArgs e);
+    public event AccountHandler? Notify;
+
+    public int Sum { get; private set; }
+    public Account(int sum) => Sum = sum;
+
+    public void Put(int sum)
+    {
+        Sum += sum;
+        Notify?.Invoke(this, new AccountEventArgs($"Balance++, {sum}", sum));
+    }
+
+    public void Take(int sum)
+    {
+        if (Sum >= sum)
+        {
+            Sum -= sum;
+            Notify?.Invoke(this, new AccountEventArgs($"Balance--, {sum}", sum));
+        }
+        else
+        {
+            Notify?.Invoke(this, new AccountEventArgs($"No money, no funny", sum));
+        }
+    }
+}*/
+
+
+
+/*Account account = new Account(200);
 
 account.Notify += account.DisplayMessage;
 account.Put(20);
@@ -42,15 +174,7 @@ class Account
             _notify?.Invoke($"No money, no funny {Sum}");
         }
     }
-}
-
-
-
-
-
-
-
-
+}*/
 
 
 /*Account account = new Account(500);
