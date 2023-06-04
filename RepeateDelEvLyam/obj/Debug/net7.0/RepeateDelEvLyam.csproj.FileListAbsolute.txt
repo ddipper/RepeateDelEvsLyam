@@ -1,0 +1,15 @@
+D:\Prog\github\RepeateDelEvLyam\RepeateDelEvLyam\bin\Debug\net7.0\RepeateDelEvLyam.exe
+D:\Prog\github\RepeateDelEvLyam\RepeateDelEvLyam\bin\Debug\net7.0\RepeateDelEvLyam.deps.json
+D:\Prog\github\RepeateDelEvLyam\RepeateDelEvLyam\bin\Debug\net7.0\RepeateDelEvLyam.runtimeconfig.json
+D:\Prog\github\RepeateDelEvLyam\RepeateDelEvLyam\bin\Debug\net7.0\RepeateDelEvLyam.dll
+D:\Prog\github\RepeateDelEvLyam\RepeateDelEvLyam\bin\Debug\net7.0\RepeateDelEvLyam.pdb
+D:\Prog\github\RepeateDelEvLyam\RepeateDelEvLyam\obj\Debug\net7.0\RepeateDelEvLyam.csproj.AssemblyReference.cache
+D:\Prog\github\RepeateDelEvLyam\RepeateDelEvLyam\obj\Debug\net7.0\RepeateDelEvLyam.GeneratedMSBuildEditorConfig.editorconfig
+D:\Prog\github\RepeateDelEvLyam\RepeateDelEvLyam\obj\Debug\net7.0\RepeateDelEvLyam.AssemblyInfoInputs.cache
+D:\Prog\github\RepeateDelEvLyam\RepeateDelEvLyam\obj\Debug\net7.0\RepeateDelEvLyam.AssemblyInfo.cs
+D:\Prog\github\RepeateDelEvLyam\RepeateDelEvLyam\obj\Debug\net7.0\RepeateDelEvLyam.csproj.CoreCompileInputs.cache
+D:\Prog\github\RepeateDelEvLyam\RepeateDelEvLyam\obj\Debug\net7.0\RepeateDelEvLyam.dll
+D:\Prog\github\RepeateDelEvLyam\RepeateDelEvLyam\obj\Debug\net7.0\refint\RepeateDelEvLyam.dll
+D:\Prog\github\RepeateDelEvLyam\RepeateDelEvLyam\obj\Debug\net7.0\RepeateDelEvLyam.pdb
+D:\Prog\github\RepeateDelEvLyam\RepeateDelEvLyam\obj\Debug\net7.0\RepeateDelEvLyam.genruntimeconfig.cache
+D:\Prog\github\RepeateDelEvLyam\RepeateDelEvLyam\obj\Debug\net7.0\ref\RepeateDelEvLyam.dll
