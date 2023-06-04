@@ -1,14 +1,53 @@
 ﻿
 
-var hello = () => Console.WriteLine("hello my ddipper))");
 
-var message = () => Console.WriteLine("hi");
-message += () => Console.WriteLine(" world ");
+
+
+
+
+
+
+
+
+
+/*int[] integers = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+int result1 = Sum(integers, x => x > 5);
+Console.WriteLine(result1);
+
+int result2 = Sum(integers, x => x % 2 == 0);
+Console.WriteLine(result2);
+
+int Sum(int[] numbers, isEqual isEqual)
+{
+    int result = 0;
+    foreach (int i in numbers)
+    {
+        if (isEqual(i)) result += i;
+    }
+
+    return result;
+}
+
+delegate bool isEqual(int x);*/
+
+
+/*var hello = () => Console.WriteLine("hello my ddipper))");
+
+var message = () => Console.Write("hi ");
+message += () => Console.WriteLine("world ");
 message += hello;
 message += Print;
 
-void Print() => Console.WriteLine("<3");
+message();
+Console.WriteLine("------------");
 
+message -= Print;
+message -= hello;
+
+message?.Invoke();
+
+void Print() => Console.WriteLine("<3");*/
 
 
 /*var substract = (int x, int y) =>
