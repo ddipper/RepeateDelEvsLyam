@@ -1,4 +1,48 @@
-﻿
+﻿Account account = new Account(200);
+
+account.Notify += account.DisplayMessage;
+account.Put(20);
+account.Take(50);
+account.Notify -= account.DisplayMessage;
+
+class Account
+{
+    public void DisplayMessage(string msg) => Console.WriteLine(msg);
+    public delegate void AccountHandler(string message);
+    AccountHandler? _notify;
+    public event AccountHandler Notify
+    {
+        add
+        {
+            _notify += value;
+            Console.WriteLine($"{value.Method.Name} added");
+        }
+        remove
+        {
+            _notify -= value;
+            Console.WriteLine($"{value.Method.Name} removed");
+        }
+    }
+    public Account(int sum) => Sum = sum;
+    public int Sum { get; private set; }
+    public void Put(int sum)
+    {
+        Sum += sum;
+        _notify?.Invoke($"Balance++ {sum}");
+    }
+    public void Take(int sum)
+    {
+        if (Sum >= sum)
+        {
+            Sum -= sum;
+            _notify?.Invoke($"Balance-- {sum}");
+        }
+        else
+        {
+            _notify?.Invoke($"No money, no funny {Sum}");
+        }
+    }
+}
 
 
 
@@ -7,6 +51,43 @@
 
 
 
+
+
+/*Account account = new Account(500);
+
+account.Notify += DisplayMessage;
+account.Put(20);
+account.Take(40);
+account.Take(500);
+
+void DisplayMessage(string msg) => Console.WriteLine(msg);
+
+class Account
+{
+    public delegate void AccountHandler(string msg);
+    public event AccountHandler Notify;
+    public int Sum { get; private set; }
+    public Account(int sum) => Sum = sum;
+
+    public void Put(int sum)
+    {
+        Sum += sum;
+        Notify?.Invoke($"Balance++ {sum}");
+    }
+
+    public void Take(int sum)
+    {
+        if (Sum >= sum)
+        {
+            Sum -= sum;
+            Notify?.Invoke($"Balance-- {sum}");
+        }
+        else
+        {
+            Notify?.Invoke("No money, no funny");
+        }
+    }
+}*/
 
 
 
@@ -32,7 +113,7 @@ int Sum(int[] numbers, isEqual isEqual)
 delegate bool isEqual(int x);*/
 
 
-/*var hello = () => Console.WriteLine("hello my ddipper))");
+/*var hello = () => Console.WriteLine("hello my dipper))");
 
 var message = () => Console.Write("hi ");
 message += () => Console.WriteLine("world ");
@@ -50,15 +131,15 @@ message?.Invoke();
 void Print() => Console.WriteLine("<3");*/
 
 
-/*var substract = (int x, int y) =>
+/*var Subtract = (int x, int y) =>
 {
     if (x > y) return x - y;
     return y - x;
 };
-int result1 = substract(10, 6);
+int result1 = Subtract(10, 6);
 Console.WriteLine(result1);
 
-int result2 = substract(-10, 6);
+int result2 = Subtract(-10, 6);
 Console.WriteLine(result2);*/
 
 
@@ -121,7 +202,7 @@ public class Account
         if (this.sum >= sum)
         {
             this.sum -= sum;
-            take?.Invoke($"Balanse - {sum}");
+            take?.Invoke($"Balance - {sum}");
         }
         else
         {
@@ -140,31 +221,31 @@ Operation SelectOperation(OperationType opType)
     switch (opType)
     {
         case OperationType.Add: return Add;
-        case OperationType.Substract: return Substract;
+        case OperationType.Subtract: return Subtract;
         default: return Multiply;
     }
 }
 
 int Add(int x, int y) => x + y;
-int Substract(int x, int y) => x - y;
+int Subtract(int x, int y) => x - y;
 int Multiply(int x, int y) => x * y;
 
 enum OperationType
 {
-    Add, Substract, Multiply
+    Add, Subtract, Multiply
 }
 
 delegate int Operation(int x, int y);*/
 
 
 /*DoOperation(1, 5, Add);
-DoOperation(6, 4, Substruct);
+DoOperation(6, 4, Subtract);
 DoOperation(2,4,Multiply);
 
 void DoOperation(int a, int b, Operation op) => Console.WriteLine(op(a,b));
 
 int Add(int x, int y) => x + y;
-int Substruct(int x, int y) => x - y;
+int Subtract(int x, int y) => x - y;
 int Multiply(int x, int y) => x * y;
 
 delegate int Operation(int a, int b);*/
@@ -218,7 +299,7 @@ delegate int Operation(int a, int b);*/
         Message mes = SayHello;
         mes();
 
-        void SayHello() => Console.WriteLine("Hello ddipper");
+        void SayHello() => Console.WriteLine("Hello dipper");
     }
 }*/
 
