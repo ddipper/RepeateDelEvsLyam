@@ -1,15 +1,62 @@
-﻿
+﻿var multiply = (int n) => (int m) => m * n;
+
+var fn = multiply(3);
+
+Console.WriteLine(fn(2));
+Console.WriteLine(fn(3));
+Console.WriteLine(fn(4));
 
 
+/*var fn = Multiply(3);
+Console.WriteLine(fn(2));
+Console.WriteLine(fn(3));
+Console.WriteLine(fn(5));
+
+Operation Multiply(int n)
+{
+    int Inner(int m)
+    {
+        return n * m;
+    }
+
+    return Inner;
+}
+
+delegate int Operation(int n);*/
 
 
+/*var outerFn = () =>
+{
+    int x = 10;
+    var innerFn = () => Console.WriteLine(x++);
+    return innerFn;
+};
+
+var fn = outerFn();
+fn();
+fn();
+fn();*/
 
 
+/*var fn = Outer();
+fn();
+fn();
+fn();
+
+Action Outer()
+{
+    int x = 5;
+
+    void Inner()
+    {
+        x++;
+        Console.WriteLine(x);
+    }
+    return Inner;
+}*/
 
 
-
-
-Func<int, int, string> createString = (a, b) => $"{a}{b}";
+/*Func<int, int, string> createString = (a, b) => $"{a}{b}";
 Console.WriteLine(createString(1,5));
 Console.WriteLine(createString(34,2));
 
@@ -21,7 +68,7 @@ Console.WriteLine(result2);
 
 int DoOperation(int n, Func<int, int> operation) => operation(n);
 int DoubleNumber(int n) => 2 * n;
-int SquareNumber(int n) => n * n;
+int SquareNumber(int n) => n * n;*/
 
 
 /*Predicate<int> isPositive = (int x) => x > 0; 
